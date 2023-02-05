@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "open3"
+
+def system!(command)
+  Open3.popen3(command) { |_i, o, e|
+    puts o.read.chomp
+    puts e.read.chomp
+  }
+end
+
+puts "== Adding '# frozen_string_literal: true' =="
+system! "bundle exec magic_frozen_string_literal"
+
+puts "== Checking StandardRb =="
+system! "bundle exec rake standard:fix"
+
+puts "== Checking ERB Lint =="
+system! "bundle exec erblint --config .erb-lint.yml --autocorrect app/views/**/*.html.erb app/components/**/*.html.erb"
+
+puts "== Checking Prettier-Standard =="
+system! "yarn run prettier:format"

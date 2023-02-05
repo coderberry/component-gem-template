@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "component_library/version"
 require "component_library/engine"
 
