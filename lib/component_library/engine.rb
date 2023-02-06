@@ -9,9 +9,14 @@ module ComponentLibrary
 
     config.generators { |g| g.test_framework :rspec }
 
-    component_path = root.join("app", "components")
+    component_path = root.join("app", "components", "component_library")
     config.autoload_paths << component_path
     config.view_component.preview_paths << component_path
+
+    initializer 'lookbook.autoload' do
+      config.lookbook.project_name = "Component Library"
+      config.lookbook.preview_paths = [component_path]
+    end
 
     initializer 'component_library.autoload' do
       ActiveSupport.on_load(:view_component) do
