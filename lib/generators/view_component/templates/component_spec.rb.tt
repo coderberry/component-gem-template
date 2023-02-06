@@ -1,0 +1,16 @@
+# frozen_string_literal: true
+
+require "rails_helper"
+
+describe <%= module_name %>::<%= class_name %>::Component do
+  let(:options) { <%= spec_options %> }
+  let(:component) { described_class.new(**options) }
+
+  subject { rendered_content }
+
+  it "renders" do
+    render_inline(component)
+
+    is_expected.to have_css "div"
+  end
+end
