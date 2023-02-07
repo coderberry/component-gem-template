@@ -20,7 +20,6 @@ Gem::Specification.new do |spec|
     Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   end
 
-  spec.add_dependency "lookbook", "~> 1.5.1"
   spec.add_dependency "rails", ">= 6.1", "< 8"
   spec.add_dependency "view_component", "3.0.0.rc1"
   spec.add_dependency "vite_rails", "~> 3.0.3"

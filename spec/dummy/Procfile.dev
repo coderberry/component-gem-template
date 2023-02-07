@@ -1,0 +1,2 @@
+web: bundle exec puma -C config/puma.rb -e development -p 4000
+logs: tail -f ./log/development.log

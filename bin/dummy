@@ -1,0 +1,7 @@
+#!/bin/bash
+
+(
+  cd ./spec/dummy && \
+  bundle install && \
+  bundle exec foreman start -f Procfile.dev
+)

@@ -1,0 +1,12 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+gem "component_library", path: "../../."
+gem "rails"
+gem "view_component"
+gem "lookbook"
+gem "puma"
+gem "sqlite3"
+gem "foreman"
